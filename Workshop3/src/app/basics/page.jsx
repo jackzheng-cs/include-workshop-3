@@ -11,17 +11,6 @@ export default function BasicsPage() {
 
       <div className={styles.data}>
         {/* TODO: Use .map() on your imported data */}
-        {team.map((pokemon) => (
-          <div key={pokemon.id} className={styles.card}>
-            <img
-              src={pokemon.image}
-              alt={pokemon.name}
-              className={styles.pokemonImage}
-            />
-            <h3>{pokemon.name}</h3>
-            <p>Type: {pokemon.type}</p>
-          </div>
-        ))}
 
         {/* Example skeleton:
           {yourData.map((item) => (

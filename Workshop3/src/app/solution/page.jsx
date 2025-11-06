@@ -3,7 +3,8 @@ import { team } from "../../data/pokemonData";
 import Link from "next/link";
 
 export default function SolutionPage() {
-  const fireTeam = team.filter((pokemon) => pokemon.type === "Water");
+  const fireTeam = team.filter((pokemon) => pokemon.type === "Fire");
+  const generation1 = team.filter((pokemon) => pokemon.generation === 1);
 
   return (
     <main className={styles.container}>
@@ -22,6 +23,7 @@ export default function SolutionPage() {
               />
               <h3>{pokemon.name}</h3>
               <p>Type: {pokemon.type}</p>
+              <p>Generation: {pokemon.generation}</p>
             </div>
           ))}
         </div>
@@ -31,7 +33,7 @@ export default function SolutionPage() {
         <h2>.Filter Method</h2>
 
         <div className={styles.pokemonCards}>
-          {fireTeam.map((pokemon) => (
+          {/* {fireTeam.map((pokemon) => (
             <div key={pokemon.id} className={styles.card}>
               <img
                 src={pokemon.image}
@@ -40,6 +42,18 @@ export default function SolutionPage() {
               />
               <h3>{pokemon.name}</h3>
               <p>Type: {pokemon.type}</p>
+            </div>
+          ))} */}
+
+          {generation1.map((pokemon) => (
+            <div key={pokemon.id} className={styles.card}>
+              <img
+                src={pokemon.image}
+                alt={pokemon.name}
+                className={styles.pokemonImage}
+              />
+              <h3>{pokemon.name}</h3>
+              <p>Generation: {pokemon.generation}</p>
             </div>
           ))}
         </div>
